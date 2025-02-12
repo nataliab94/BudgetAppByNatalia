@@ -2,7 +2,7 @@ body{
     height: 100vh;
 }
 section {
-    display: none; /* Domyślnie ukrywa wszystkie sekcje */
+    display: none; 
 }
 #startPage{
     display:block;
