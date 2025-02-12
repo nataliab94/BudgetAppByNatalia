@@ -1,0 +1,36 @@
+body{
+    height: 100vh;
+}
+section {
+    display: none; /* Domyślnie ukrywa wszystkie sekcje */
+}
+#startPage{
+    display:block;
+}
+
+h2,h3{
+    color: #0D6EFD;
+}
+
+.input-group{
+   
+    
+    margin: 10px auto;
+}
+
+#balancePieChart{
+    max-height: 250px;
+}
+
+#incomeBarChart{
+    max-height: 300px;
+}
+#expenseBarChart{
+    max-height: 400px;
+}
+    
+    
+    
+    
+
+    
