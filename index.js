@@ -6,12 +6,10 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     
-
-    // Po kliknięciu w link ukrywamy wszystkie sekcje i pokazujemy tylko odpowiednią
     $("#showAddIncome").click(function() {
         $("section").hide();
         $("#startPage").hide();
-        $("#add_income").fadeIn(); // Pokazuje sekcję Add income z efektem fade
+        $("#add_income").fadeIn(); 
     });
 
     $("#showAddExpense").click(function() {
@@ -116,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100, // Ponieważ to procenty, max = 100
+                    max: 100, 
                     ticks: {
                         stepSize: 10
                     }
@@ -127,11 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Przygotowanie kontekstu dla wykresów
+
     var incomeCtx = document.getElementById("incomeChart").getContext("2d");
     var expenseCtx = document.getElementById("expenseChart").getContext("2d");
 
-    // Dane dla wykresu przychodów
+    
     var incomeChart = new Chart(incomeCtx, {
         type: "bar",
         data: {
@@ -157,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Dane dla wykresu wydatków
     var expenseChart = new Chart(expenseCtx, {
         type: "bar",
         data: {
