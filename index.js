@@ -120,7 +120,7 @@ function updateBalance(period) {
 $(document).ready(function () {
     $("#changeData").click(function () {
         alert("Opcja: Zmień dane");
-        // Dodaj tutaj kod do zmiany danych
+        
     });
 
     $("#deleteExpense").click(function () {
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             labels: ["Salary", "Online sales", "Bank interest","Others" ],
             datasets: [{
                 label: "Income (PLN)",
-                data: [5000, 1200, 800, 200], // Dane dla kategorii
+                data: [5000, 1200, 800, 200], 
                 backgroundColor: ["#0d6efd", "#5a9cf8", "#d0e2ff", "#343a40"],
                 borderColor: [["#000000"]],
                 borderWidth: 1
