@@ -54,7 +54,7 @@ $(document).ready(function() {
         $("section").hide();
         $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
     });
-    $("#cancelEdit").click(function () {
+    $("#cancelEditIncome").click(function () {
         $("section").hide();
         $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
     });
