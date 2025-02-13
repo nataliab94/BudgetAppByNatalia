@@ -28,6 +28,14 @@ h2,h3{
 #expenseBarChart{
     max-height: 400px;
 }
+#deleteIncome{
+    background-color: #aa3838;important!
+}
+
+#deleteExpense{
+    background-color: #aa3838;important!
+}
+    
     
     
     
