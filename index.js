@@ -6,10 +6,12 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     
+
+    // Po kliknięciu w link ukrywamy wszystkie sekcje i pokazujemy tylko odpowiednią
     $("#showAddIncome").click(function() {
         $("section").hide();
         $("#startPage").hide();
-        $("#add_income").fadeIn(); 
+        $("#add_income").fadeIn(); // Pokazuje sekcję Add income z efektem fade
     });
 
     $("#showAddExpense").click(function() {
@@ -28,6 +30,47 @@ $(document).ready(function() {
         $("section").hide();
         $("#startPage").hide();
         $("#settings").fadeIn();
+    });
+    $("#showEditDetails").click(function() {
+        $("section").hide();
+        $("#startPage").hide();
+        $("#editPersonalDetails").fadeIn(); 
+    });
+
+    $("#income_button").click(function () {
+        $("section").hide(); // Ukrywa wszystkie sekcje
+        $("#add_income").fadeIn(); // Pokazuje sekcję dodawania przychodu
+    });
+
+    $("#expense_button").click(function () {
+        $("section").hide();
+        $("#add_expense").fadeIn(); // Pokazuje sekcję dodawania wydatku
+    });
+    $("#cancelIncome").click(function () {
+        $("section").hide();
+        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+    });
+    $("#cancelExpense").click(function () {
+        $("section").hide();
+        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+    });
+    $("#cancelEdit").click(function () {
+        $("section").hide();
+        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+    });
+    $("#showEditIncome").click(function() {
+        $("section").hide();
+        $("#startPage").hide();
+        $("#editIncome").fadeIn(); 
+    });
+    $("#cancelEditExpense").click(function () {
+        $("section").hide();
+        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+    });
+    $("#showEditExpense").click(function() {
+        $("section").hide();
+        $("#startPage").hide();
+        $("#editExpense").fadeIn(); 
     });
 });
 
@@ -114,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100, 
+                    max: 100, // Ponieważ to procenty, max = 100
                     ticks: {
                         stepSize: 10
                     }
@@ -125,11 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    // Przygotowanie kontekstu dla wykresów
     var incomeCtx = document.getElementById("incomeChart").getContext("2d");
     var expenseCtx = document.getElementById("expenseChart").getContext("2d");
 
-    
+    // Dane dla wykresu przychodów
     var incomeChart = new Chart(incomeCtx, {
         type: "bar",
         data: {
@@ -155,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Dane dla wykresu wydatków
     var expenseChart = new Chart(expenseCtx, {
         type: "bar",
         data: {
@@ -290,3 +334,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
