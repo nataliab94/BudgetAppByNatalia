@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -22,10 +23,9 @@
                     Settings
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
-                    <li><a class="dropdown-item" href="#" id="changeData">Edit Personal Details</a></li>
-                    <li><a class="dropdown-item" href="#" id="deleteIncome">Delete Income</a></li>
-                    <li><a class="dropdown-item" href="#" id="deleteExpense">Delete Expense</a></li>
-                    <li><a class="dropdown-item" href="#" id="editPaymentType">Edit Payment Type</a></li>
+                    <li><a class="dropdown-item" href="#" id="showEditDetails">Edit Personal Details</a></li>
+                    <li><a class="dropdown-item" href="#" id="showEditIncome">Edit income</a></li>
+                    <li><a class="dropdown-item" href="#" id="showEditExpense">Edit expense</a></li>
                 </ul>
             </li>
         </ul>
@@ -35,10 +35,22 @@
 
 
     <section id="startPage">
-        <div class="container d-flex align-items-center mt-5">
-            <img class="money mx-4" src="./business-1297925_640.png" height="300"/>
-            <h2 class="startingHeader mx-4">Let's save some money!</h2>
-        </div>
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <img src="./business-1297925_640.png"class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"></img>
+            <h1 class="text-body-emphasis">Let's save some money!</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                The easiest way to keep your finances under control!
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+              <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" id="income_button" type="button">
+                Add income
+                
+              </button>
+              <button class="btn btn-outline-primary btn-lg px-4 rounded-pill" id="expense_button" type="button">
+                Add expense
+              </button>
+            </div>
+          </div>
     </section>
 
     <section id="add_income">
@@ -88,7 +100,7 @@
 
             <div class="d-flex justify-content-center  mt-3">
               <button type="button" class="btn btn-primary w-48 m-3" id="addIncomeButton">Add income</button>
-              <button type="button" class="btn btn-secondary w-48 m-3" id="cancelButton">Cancel</button>
+              <button type="button" class="btn btn-secondary w-48 m-3" id="cancelIncome">Cancel</button>
           </div>
         </div>
     </section>
@@ -161,7 +173,7 @@
 
             <div class="d-flex justify-content-center  mt-3">
               <button type="button" class="btn btn-primary w-48 m-3" id="addIncomeButton">Add expense</button>
-              <button type="button" class="btn btn-secondary w-48 m-3" id="cancelButton">Cancel</button>
+              <button type="button" class="btn btn-secondary w-48 m-3" id="cancelExpense">Cancel</button>
           </div>
         </div>
     </section>
@@ -224,7 +236,183 @@
 
     
   </section>
+
+  <section id="editPersonalDetails">
+
+        <div class="col-md-7 col-lg-8">
+        
+          <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Edit name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
   
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Edit password</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid password is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Repeat password</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid password is required.
+                </div>
+              </div>
+  
+            
+              <div class="col-12">
+                <label for="email" class="form-label">Edit email </label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+              <div class="d-flex justify-content-center  mt-3">
+                <button type="button" class="btn btn-primary w-48 m-3" id="saveChanges">Save</button>
+                <button type="button" class="btn btn-secondary w-48 m-3" id="cancelEdit">Cancel</button>
+            </div>
+              
+            </section>
+
+  
+  
+              
+              
+  
+              
+             <section id="editIncome">
+        
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="income_date">Date</span>
+                        </div>
+                        <input type="date" class="form-control" id="dateInput">
+                    </div>
+        
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                          <label class="input-group-text" for="incomeType">Type</label>
+                      </div>
+                      <select class="form-select" id="incomeType">
+                          <option selected>Choose...</option>
+                          <option value="1">Income 1</option>
+                          <option value="2">Income 2</option>
+                      </select>
+                  </div>
+        
+        
+                    <div class="d-flex justify-content-center  mt-3">
+                      <button type="button" class="btn btn-primary w-48 m-3" id="selectIncome">Select income</button>
+                      <button type="button" class="btn btn-primary w-48 m-3" id="deleteIncome">Delete income</button>
+                      <button type="button" class="btn btn-secondary  w-48 m-3" id="cancelEditIncome">Cancel</button>
+                  </div>
+                
+  <div class="container">
+            <h4 class="mb-3">Change</h4>
+  
+            <div class="my-3">
+              <div class="form-check">
+                <input id="amount" name="incomeData" type="radio" class="form-check-input" checked="" required="">
+                <label class="form-check-label" for="amount">Amount</label>
+              </div>
+              <div class="form-check">
+                <input id="date" name="incomeData" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="date">Date</label>
+              </div>
+              <div class="form-check">
+                <input id="type" name="incomeData" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="type">Type</label>
+              </div>
+              <div class="form-check">
+                <input id="incomeDescription" name="incomeData" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="incomeDescription">Description</label>
+              </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-start  m-4">
+            <button type="button" class="btn btn-primary " id="editIncomeButton">Edit</button>
+        </div>
+  
+            
+  </section>
+
+  <section id="editExpense">
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="income_date">Date</span>
+        </div>
+        <input type="date" class="form-control" id="dateInput">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <label class="input-group-text" for="incomeType">Type</label>
+      </div>
+      <select class="form-select" id="incomeType">
+          <option selected>Choose...</option>
+          <option value="1">Expense 1</option>
+          <option value="2">Expense 2</option>
+      </select>
+  </div>
+
+
+    <div class="d-flex justify-content-center  mt-3">
+      <button type="button" class="btn btn-primary w-48 m-3" id="selectExpense">Select income</button>
+      <button type="button" class="btn btn-primary w-48 m-3" id="deleteExpense">Delete expense</button>
+      <button type="button" class="btn btn-secondary w-48 m-3" id="cancelEditExpense">Cancel</button>
+  </div>
+
+<div class="container">
+<h4 class="mb-3">Change</h4>
+
+<div class="my-3">
+
+<div class="form-check">
+<input id="amount" name="incomeData" type="radio" class="form-check-input" checked="" required="">
+<label class="form-check-label" for="amount">Amount</label>
+</div>
+
+<div class="form-check">
+<input id="date" name="incomeData" type="radio" class="form-check-input" required="">
+<label class="form-check-label" for="date">Date</label>
+</div>
+
+<div class="form-check">
+<input id="type" name="incomeData" type="radio" class="form-check-input" required="">
+<label class="form-check-label" for="type">Type</label>
+</div>
+
+<div class="form-check">
+<input id="incomeDescription" name="expenseData" type="radio" class="form-check-input" required="">
+<label class="form-check-label" for="incomeDescription">Description</label>
+</div>
+
+<div class="form-check">
+<input id="expensePayment" name="expenseData" type="radio" class="form-check-input" required="">
+<label class="form-check-label" for="expensePayment">Payment</label>
+</div>
+
+</div>
+
+</div>
+<div class="d-flex justify-content-start  m-4">
+<button type="button" class="btn btn-primary " id="editExpenseButton">Edit</button>
+</div>
+
+
+
+  </section>
+
+ 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="index.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
