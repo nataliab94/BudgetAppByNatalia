@@ -6,12 +6,10 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     
-
-    // Po kliknięciu w link ukrywamy wszystkie sekcje i pokazujemy tylko odpowiednią
     $("#showAddIncome").click(function() {
         $("section").hide();
         $("#startPage").hide();
-        $("#add_income").fadeIn(); // Pokazuje sekcję Add income z efektem fade
+        $("#add_income").fadeIn(); 
     });
 
     $("#showAddExpense").click(function() {
@@ -38,25 +36,25 @@ $(document).ready(function() {
     });
 
     $("#income_button").click(function () {
-        $("section").hide(); // Ukrywa wszystkie sekcje
-        $("#add_income").fadeIn(); // Pokazuje sekcję dodawania przychodu
+        $("section").hide(); 
+        $("#add_income").fadeIn(); 
     });
 
     $("#expense_button").click(function () {
         $("section").hide();
-        $("#add_expense").fadeIn(); // Pokazuje sekcję dodawania wydatku
+        $("#add_expense").fadeIn(); 
     });
     $("#cancelIncome").click(function () {
         $("section").hide();
-        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+        $("#startPage").fadeIn(); 
     });
     $("#cancelExpense").click(function () {
         $("section").hide();
-        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+        $("#startPage").fadeIn(); 
     });
     $("#cancelEditIncome").click(function () {
         $("section").hide();
-        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+        $("#startPage").fadeIn(); 
     });
     $("#showEditIncome").click(function() {
         $("section").hide();
@@ -65,12 +63,16 @@ $(document).ready(function() {
     });
     $("#cancelEditExpense").click(function () {
         $("section").hide();
-        $("#startPage").fadeIn(); // Pokazuje sekcję dodawania wydatku
+        $("#startPage").fadeIn(); 
     });
     $("#showEditExpense").click(function() {
         $("section").hide();
         $("#startPage").hide();
         $("#editExpense").fadeIn(); 
+    });
+   $("#cancelEditData").click(function () {
+        $("section").hide();
+        $("#startPage").fadeIn(); 
     });
 });
 
@@ -108,8 +110,8 @@ function updateBalance(period) {
 
         let balance = totalIncome - totalExpense;
         let balanceMessage = balance >= 0
-            ? `<span class="text-success">Gratulacje! Świetnie zarządzasz finansami!</span>`
-            : `<span class="text-danger">Uważaj, wpadasz w długi!</span>`;
+            ? `<span class="text-success">Congratulation!You manage your finances very well.</span>`
+            : `<span class="text-danger">Be careful, you're getting into debt</span>`;
 
         $("#balanceResult").html(`<h4>Bilans: ${balance} PLN</h4>${balanceMessage}`);
     }
@@ -122,18 +124,18 @@ $(document).ready(function () {
     });
 
     $("#deleteExpense").click(function () {
-        alert("Opcja: Usuń wydatek");
-        // Dodaj kod do usuwania wydatku
+        alert("Opcja: Are you sure you want to delete the expense?");
+        
     });
 
     $("#deleteIncome").click(function () {
-        alert("Opcja: Usuń przychód");
-        // Dodaj kod do usuwania przychodu
+        alert("Opcja: Are you sure you want to delete the income?");
+        
     });
 
     $("#changePaymentType").click(function () {
-        alert("Opcja: Zmień rodzaj płatności");
-        // Dodaj kod do zmiany rodzaju płatności
+        alert("Opcja: ");
+       
     });
 });
 
@@ -168,11 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Przygotowanie kontekstu dla wykresów
+    
     var incomeCtx = document.getElementById("incomeChart").getContext("2d");
     var expenseCtx = document.getElementById("expenseChart").getContext("2d");
 
-    // Dane dla wykresu przychodów
     var incomeChart = new Chart(incomeCtx, {
         type: "bar",
         data: {
@@ -197,8 +198,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
-    // Dane dla wykresu wydatków
     var expenseChart = new Chart(expenseCtx, {
         type: "bar",
         data: {
